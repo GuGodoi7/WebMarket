@@ -5,18 +5,18 @@
 
 ## Requisitos
 
-- [] CRUD Usuários
-- [] CRUD Produtos
-- [] CRUD Carrinho
-- [] Autenticação
-    - [] Cadastro
-    - [] Login
-- [] Página Inicial
-    - [] Ofertas
-    - [] Categorias
-    - [] Promoções do dia
-- [] Carrinho
-- [] Cadastrar produtos
+- [ ] CRUD Usuários
+- [ ] CRUD Produtos
+- [ ] CRUD Carrinho
+- [ ] Autenticação
+    - [ ] Cadastro
+    - [ ] Login
+- [ ] Página Inicial
+    - [ ] Ofertas
+    - [ ] Categorias
+    - [ ] Promoções do dia
+- [ ] Carrinho
+- [ ] Cadastrar produtos
 
 ## Documentação da API
 
@@ -37,44 +37,17 @@
 ### Login Usuário
 
 `GET` /usuario
-Retorna um array com os todos os dados relacionados ao usuário cadastrado.
+Retorna um array com os dados relacionados ao usuário cadastrado.
 
 #### Exemplo de Resposta
 
 ```js
 // GET /usuario
 {
-    "usuario": {
-        "id": 1,
-        "email": "abc1234@gmail.com",
-        "nome": "Gustavo",
-    },
-    
-    "carrinho":{
-        "Produto 1":{
-            "id": 123,
-            "nome": "Computador",
-            "categoria": "Eletronico"
-        }
-        "Produto 2":{
-            "id": 234,
-            "nome": "Camisa",
-            "categoria": "Vestuario"
-        }
-    },
-    
-    "produtos_cadastrados":{
-        "Produto 1":{
-            "id": 123,
-            "nome": "Computador",
-            "categoria": "Eletronico"
-        }
-        "Produto 2":{
-            "id": 234,
-            "nome": "Camisa",
-            "categoria": "Vestuario"
-        }
-    }
+    "id": 1,
+    "email": "abc1234@gmail.com",
+    "nome": "Gustavo",
+
 }
 ```
 
@@ -84,6 +57,7 @@ Retorna um array com os todos os dados relacionados ao usuário cadastrado.
 |------|---------
 |200| Dados retornados com sucesso
 |401| Usuário não encontrado. Verifique seus dados
+<br>
 
 ### Cadastrar Usuário
 
@@ -93,7 +67,7 @@ Cadastra um usuário com os dados enviados no corpo da requisição
 
 #### Corpo da Requisição
 |campo|tipo|obrigatório
-|-----|----|-----------
+|-----|----|:-----------:
 |email|string|✅
 |senha|string|✅
 
@@ -102,8 +76,8 @@ Cadastra um usuário com os dados enviados no corpo da requisição
 ```js
 // POST /usuario
 {
-    "email": "abc1234@gmail.com",
-    "nome": "Gustavo"
+    "email": "xyz789@gmail.com",
+    "nome": "Matheus"
 }
 ```
 
@@ -111,15 +85,69 @@ Cadastra um usuário com os dados enviados no corpo da requisição
 
 ```js
 {
-    "id": 1
-    "email": "abc1234@gmail.com",
-    "nome": "Gustavo"
+    "id": 1,
+    "email": "xyz789@gmail.com",
+    "nome": "Matheus",
 }
 ```
-
 #### Códigos de Status
 
 |código|descrição
 |------|---------
 |201| Usuário cadastrado com sucesso
 |400| Falha no cadastro. Verifique os dados digitados
+<br>
+
+### Remover Usuário
+
+`DELETE` /usuario/`{id}`
+
+Apaga o usuario com o `id` informado no path
+
+#### Códigos de Status
+
+|código|descrição
+|------|---------
+|204| Usuário apagado com sucesso
+|402| Não autenticado. Se autentique em /usuario
+|403| Erro ao deletar. Verifique o `id` informado
+<br>
+
+### Atualizar Usuário
+
+`Put` /usuario/`{id}`
+
+Atualiza um usuário com o `id` informado no path, utilizando dados enviados no corpo da requisição
+
+#### Corpo da Requisição
+|campo|tipo|obrigatório
+|-----|----|:-----------:
+|email|string|✅
+|senha|string|✅
+
+#### Exemplo de Requisição
+
+```js
+// POST /usuario
+{
+    "email": "uwxyz789@gmail.com",
+    "nome": "Matheus Silva"
+}
+```
+
+#### Exemplo de Resposta
+
+```js
+{
+    "id": 1,
+    "email": "uwxyz789@gmail.com",
+    "nome": "Matheus Silva",
+}
+```
+#### Códigos de Status
+
+|código|descrição
+|------|---------
+|203| Usuário atualizado com sucesso
+|402| Não autenticado. Se autentique em /usuario
+|404| Falha na atualização. Verifique os dados digitados
