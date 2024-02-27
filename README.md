@@ -7,6 +7,7 @@
 
 - [] CRUD Usuários
 - [] CRUD Produtos
+- [] CRUD Carrinho
 - [] Autenticação
     - [] Cadastro
     - [] Login
@@ -32,3 +33,20 @@
 - Listar Categorias
 - Adicionar produtos ao carrinho
 - Remover produtos do carrinho
+
+#### Listar Categorias
+
+`GET` /categoria
+Retorna um array com as categorias de produtos disponíveis
+
+##### Exemplo de Resposta
+
+```js
+[
+   {
+      "id": 1
+      "nome": "Eletrônicos"
+      "icone": "Computador"
+   }
+]
+```
