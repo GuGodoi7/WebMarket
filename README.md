@@ -1,6 +1,6 @@
 # WebMarket
 
-    O projeto 'WebMarket' tem como objetivo criar uma plataforma online que funcione como um mercado virtual para vendedores autônomos. Oferecendo uma ampla variedade de produtos disponibilizados por indivíduos independentes. A plataforma visa permitir que esses vendedores alcancem um público mais diversificado e amplo. 
+   O projeto 'WebMarket' tem como objetivo criar uma plataforma online que funcione como um mercado virtual para vendedores autônomos. Oferecendo uma ampla variedade de produtos disponibilizados por indivíduos independentes. A plataforma visa permitir que esses vendedores alcancem um público mais diversificado e amplo. 
     Qualquer usuário pode criar uma conta para comprar produtos disponíveis no site. No entanto, para vender produtos, é necessário realizar um registro mais abrangente, o que possibilita o cadastro de mercadorias.
 
 ## Requisitos
