@@ -37,7 +37,7 @@
 ### Login Usuário
 
 `GET` /usuario
-Retorna um array com os dados relacionados ao usuário cadastrado.
+Retorna os dados relacionados ao usuário cadastrado.
 
 #### Exemplo de Resposta
 
@@ -46,7 +46,7 @@ Retorna um array com os dados relacionados ao usuário cadastrado.
 {
     "id": 1,
     "email": "abc1234@gmail.com",
-    "nome": "Gustavo",
+    "nome": "Gustavo"
 
 }
 ```
