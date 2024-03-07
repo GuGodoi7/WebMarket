@@ -1,8 +1,6 @@
-package br.com.fiap.webmarket.Controller;
-
+package br.com.fiap.webmarket.controller;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
