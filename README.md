@@ -117,7 +117,7 @@ Apaga o usuario com o `id` informado no path
 
 `Put` /usuario/`{id}`
 
-Atualiza um usuário com o `id` informado no path, utilizando dados enviados no corpo da requisição
+Atualiza um usuário com o `id` informado no path, utilizando dados enviados no corpo da requisição.
 
 #### Corpo da Requisição
 |campo|tipo|obrigatório
