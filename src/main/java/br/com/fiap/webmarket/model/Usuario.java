@@ -5,7 +5,8 @@ import java.util.Random;
 // record - objeto imutavel
 public record Usuario(Long id, String email, String nome) {
     public Usuario(Long id, String email, String nome){
-        this.id = Math.abs(new Random().nextLong());
+        var key = (id == null) ? Math.abs(new Random().nextLong()): id;
+        this.id = key;
         this.email = email;
         this.nome = nome;
     }
