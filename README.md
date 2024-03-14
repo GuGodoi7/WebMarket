@@ -110,7 +110,7 @@ Apaga o usuario com o `id` informado no path
 |------|---------
 |204| Usuário apagado com sucesso
 |402| Não autenticado. Se autentique em /usuario
-|403| Erro ao deletar. Verifique o `id` informado
+|404| Erro ao deletar. Verifique o `id` informado
 <br>
 
 ### Atualizar Usuário
