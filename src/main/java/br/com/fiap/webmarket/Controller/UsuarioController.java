@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import br.com.fiap.webmarket.Repository.UsuarioRepository;
 import br.com.fiap.webmarket.model.Usuario;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,8 +34,9 @@ public class UsuarioController {
     
     @PostMapping
     @ResponseStatus(CREATED)
-    public Usuario create(@RequestBody Usuario usuario){
+    public Usuario create(@RequestBody @Valid Usuario usuario){
         log.info("cadastrando usuario {}", usuario);
+        
         return repository.save(usuario); 
     }
 

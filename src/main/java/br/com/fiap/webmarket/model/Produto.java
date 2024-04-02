@@ -1,11 +1,10 @@
 package br.com.fiap.webmarket.model;
 
+import br.com.fiap.webmarket.validation.TipoCategoria;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -36,6 +35,7 @@ public class Produto {
     private int quantidade;
 
     @Size(max = 255, message="{produto.categoria.size}")
+    @TipoCategoria
     private String categoria;
 
     @Size(max = 255, message="{produto.descricao.size}")
