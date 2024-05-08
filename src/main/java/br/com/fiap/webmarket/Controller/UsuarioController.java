@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.ResponseEntity;
 
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.HttpStatus.CREATED;
@@ -46,6 +47,17 @@ public class UsuarioController {
     public List<Usuario> index() {
         return repository.findAll();
     }
+
+
+    @GetMapping ("{id}")
+    public ResponseEntity<Usuario> show(@PathVariable Long id){
+        log.info("buscando usuario com id {} ", id);
+
+        return repository
+            .findById(id).map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+    }
+
     
     @PostMapping
     @ResponseStatus(CREATED)
