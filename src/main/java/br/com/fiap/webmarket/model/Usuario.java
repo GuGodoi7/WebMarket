@@ -25,7 +25,4 @@ public class Usuario{
     @NotBlank
     private String nome;
 
-    @NotBlank
-    private String senha;
-
 }

@@ -33,7 +33,7 @@ public class ProdutoController {
     @GetMapping
     @Cacheable()
     public Page<Produto> index(
-        @ParameterObject @PageableDefault (size = 5, sort = "data", direction = Direction.DESC) Pageable pageable,
+        @ParameterObject @PageableDefault (size = 5, sort = "valor", direction = Direction.DESC) Pageable pageable,
         @RequestParam(required = false) String usuarioNome
     ){
         return repository.findByUsuarioNomeIgnoreCase(usuarioNome, pageable);
